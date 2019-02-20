@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CalculatorApp</string>
+    <string name="c">C</string>
+    <string name="zero_string">0</string>
+    <string name="dot_string">.</string>
+    <string name="division_string">/</string>
+    <string name="one_string">1</string>
+    <string name="two_string">2</string>
+    <string name="three_string">3</string>
+    <string name="multiplication_string">*</string>
+    <string name="four_string">4</string>
+    <string name="five_string">5</string>
+    <string name="subtraction_string">-</string>
+    <string name="seven_string">7</string>
+    <string name="eight_string">8</string>
+    <string name="nine_string">9</string>
+    <string name="left_brecket_string">(</string>
+    <string name="right_brecket_string">)</string>
+    <string name="compute_string">=</string>
 </resources>
