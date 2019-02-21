@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.example.user.calculatorapp.R;
 import com.example.user.calculatorapp.presenter.ICalcView;
 import com.example.user.calculatorapp.presenter.Presenter;
-import com.example.user.calculatorapp.service.CalculatorService;
 
 public class MainActivity extends AppCompatActivity implements ICalcView, View.OnClickListener {
     Presenter presenter;
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements ICalcView, View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        presenter = new Presenter(this, new CalculatorService());
+        presenter = new Presenter(this);
         initViews();
         setButtonListener();
     }
