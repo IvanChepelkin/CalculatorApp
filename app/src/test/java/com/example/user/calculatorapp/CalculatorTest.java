@@ -2,7 +2,6 @@ package com.example.user.calculatorapp;
 
 import com.example.user.calculatorapp.presenter.ICalcView;
 import com.example.user.calculatorapp.presenter.Presenter;
-import com.example.user.calculatorapp.service.CalculatorService;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,9 +23,6 @@ public class CalculatorTest {
     @Mock
     private ICalcView calcView;
 
-    @Mock
-    private CalculatorService calculatorService;
-
     private static final String VALUE_A = "2";
     private static final String VALUE_B = "3";
     private static final String addition = "+";
@@ -39,7 +35,7 @@ public class CalculatorTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        presenter = new Presenter(calcView, calculatorService);
+        presenter = new Presenter(calcView);
     }
 
     @Test
