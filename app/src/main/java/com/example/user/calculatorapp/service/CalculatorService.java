@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import static java.lang.String.valueOf;
+
 public class CalculatorService {
     private List<String> reversePolandEntryList = new ArrayList<>();
 
@@ -164,7 +166,7 @@ public class CalculatorService {
 
         Double d = stack.pop();//записываем решение уравнения в переменную
 
-        String result = String.valueOf(d);//решаем польскую запись и выводим значение
+        String result = valueOf(d);//решаем польскую запись и выводим значение
         System.out.println("ответ " + result);
 
         return result;

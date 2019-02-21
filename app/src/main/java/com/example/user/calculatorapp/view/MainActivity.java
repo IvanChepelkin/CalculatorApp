@@ -1,16 +1,18 @@
 package com.example.user.calculatorapp.view;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.calculatorapp.R;
 import com.example.user.calculatorapp.presenter.ICalcView;
 import com.example.user.calculatorapp.presenter.Presenter;
 
-public class MainActivity extends AppCompatActivity implements ICalcView, View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements ICalcView, View.OnClickListener {
     Presenter presenter;
 
     private TextView resultText;
@@ -93,21 +95,81 @@ public class MainActivity extends AppCompatActivity implements ICalcView, View.O
 
     @Override
     public void setNumberResult(String resultNumber) {
+        resultText.append(resultNumber);
 
     }
 
     @Override
     public void clearTextView() {
-
+        resultText.setText("");
     }
 
+    @SuppressLint("ShowToast")
     @Override
     public void setError() {
-
+        Toast.makeText(getApplicationContext(), "Некорректное выражение", Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onClick(View v) {
-
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case (R.id.zero):
+                presenter.appendSimbol("0");
+                break;
+            case (R.id.one):
+                presenter.appendSimbol("1");
+                break;
+            case (R.id.two):
+                presenter.appendSimbol("2");
+                break;
+            case (R.id.three):
+                presenter.appendSimbol("3");
+                break;
+            case (R.id.four):
+                presenter.appendSimbol("4");
+                break;
+            case (R.id.five):
+                presenter.appendSimbol("5");
+                break;
+            case (R.id.six):
+                presenter.appendSimbol("6");
+                break;
+            case (R.id.seven):
+                presenter.appendSimbol("7");
+                break;
+            case (R.id.eight):
+                presenter.appendSimbol("8");
+                break;
+            case (R.id.nine):
+                presenter.appendSimbol("9");
+                break;
+            case (R.id.division):
+                presenter.appendSimbol("/");
+                break;
+            case (R.id.multiplication):
+                presenter.appendSimbol("*");
+                break;
+            case (R.id.subtraction):
+                presenter.appendSimbol("-");
+                break;
+            case (R.id.addition):
+                presenter.appendSimbol("+");
+                break;
+            case (R.id.leftBrecket):
+                presenter.appendSimbol("(");
+                break;
+            case (R.id.rightBrecket):
+                presenter.appendSimbol(")");
+                break;
+            case (R.id.compute):
+                presenter.computeResult("=");
+                break;
+            case (R.id.del):
+                presenter.clearTextView();
+                break;
+            case (R.id.dot):
+                presenter.appendSimbol(".");
+                break;
+        }
     }
 }
