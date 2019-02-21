@@ -14,9 +14,9 @@ public class Presenter {
     private List<String> changeListSimbols = new ArrayList<>();
     private String result = "";
 
-    public Presenter(ICalcView ICalcView) {
+    public Presenter(ICalcView ICalcView, CalculatorService calculatorService) {
         this.ICalcView = ICalcView;
-        this.calculatorService = new CalculatorService();
+        this.calculatorService = calculatorService;
     }
 
     public void clearTextView() {
